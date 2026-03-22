@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tarea 2 — Problema 66</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="page-wrap">
+
+    <!-- Nav -->
+    <nav class="top-nav">
+      <a href="../../index.html" class="nav-back">← Volver al portafolio</a>
+      <span class="nav-breadcrumb">Tarea 2 / Problema 66</span>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+      <div class="page-badge">Tarea 02</div>
+      <h1 class="page-title">Problema 66 del Libro<br><span style="color:var(--accent)">Probabilidad Condicional</span></h1>
+      <p class="page-subtitle">Análisis de probabilidad condicional con vacacionistas y sus hábitos de trabajo.</p>
+    </header>
+
+    <!-- Transcripción del problema -->
+    <section class="section">
+      <h2 class="section-title">📋 <span>Transcripción del Problema</span></h2>
+      <div class="problem-box">
+        <p>Considere la siguiente información sobre vacacionistas (basada en parte en una encuesta reciente de Travelocity):</p>
+        <ul style="margin:12px 0 12px 20px;line-height:2;color:var(--text-muted)">
+          <li>40% revisan su correo electrónico de trabajo.</li>
+          <li>30% utilizan un teléfono celular para permanecer en contacto con su trabajo.</li>
+          <li>25% trajeron una computadora portátil consigo.</li>
+          <li>23% revisan su correo electrónico de trabajo y usan un teléfono celular para permanecer en contacto.</li>
+          <li>51% ni revisan su correo electrónico de trabajo ni utilizan un teléfono celular para permanecer en contacto ni trajeron consigo una computadora portátil.</li>
+          <li>88 de cada 100 que traen una computadora portátil también revisan su correo electrónico de trabajo.</li>
+          <li>70 de cada 100 que utilizan un teléfono celular también traen una computadora portátil.</li>
+        </ul>
+      </div>
+      <div class="problem-box" style="margin-top:0">
+        <p><b>Calcule:</b></p>
+        <ol style="margin:10px 0 0 20px;line-height:2;color:var(--text-muted)">
+          <li>¿Cuál es la probabilidad de que un vacacionista que revisa su correo electrónico también utilice un teléfono celular?</li>
+          <li>¿Cuál es la probabilidad de que alguien que trae una computadora portátil también utilice un teléfono celular?</li>
+          <li>Si el vacacionista revisó su correo electrónico y trajo una computadora portátil, ¿cuál es la probabilidad de que use un teléfono celular?</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Definición de eventos -->
+    <section class="section">
+      <h2 class="section-title">🔤 <span>Definición de Eventos</span></h2>
+      <div class="grid-2">
+        <div class="event-card event-a">
+          <div class="event-letter">A</div>
+          <div>
+            <div class="event-name">Revisa correo de trabajo</div>
+            <div class="event-prob">P(A) = 0.40</div>
+          </div>
+        </div>
+        <div class="event-card event-b">
+          <div class="event-letter">B</div>
+          <div>
+            <div class="event-name">Usa teléfono celular</div>
+            <div class="event-prob">P(B) = 0.30</div>
+          </div>
+        </div>
+        <div class="event-card event-c">
+          <div class="event-letter">C</div>
+          <div>
+            <div class="event-name">Trae computadora portátil</div>
+            <div class="event-prob">P(C) = 0.25</div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim);margin-bottom:8px">DATOS ADICIONALES</div>
+          <div style="font-size:0.88rem;color:var(--text-muted);line-height:2">
+            P(A ∩ B) = 0.23<br>
+            P(A | C) = 0.88<br>
+            P(C | B) = 0.70
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inciso a -->
+    <section class="section">
+      <h2 class="section-title">a) <span>P(B | A)</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
+        Probabilidad de que use celular, <em>dado que</em> revisa correo electrónico.
+      </p>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Fórmula de probabilidad condicional</h4>
+          <div class="math-block">P(B | A) = P(A ∩ B) / P(A)</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Sustituir valores</h4>
+          <div class="math-block">P(B | A) = 0.23 / 0.40</div>
+        </div>
+      </div>
+      <div class="result-box">
+        <div class="result-label">Resultado inciso a)</div>
+        <div class="result-value">P(B | A) = 0.575 &nbsp;(57.5%)</div>
+      </div>
+    </section>
+
+    <!-- Inciso b -->
+    <section class="section">
+      <h2 class="section-title">b) <span>P(B | C)</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
+        Probabilidad de que use celular, <em>dado que</em> trae computadora portátil.
+      </p>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Obtener P(C ∩ B) usando P(C | B)</h4>
+          <div class="math-block">
+            P(C ∩ B) = P(C | B) · P(B)<br>
+            P(C ∩ B) = 0.70 × 0.30<br>
+            P(C ∩ B) = 0.21
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Aplicar fórmula de probabilidad condicional</h4>
+          <div class="math-block">
+            P(B | C) = P(B ∩ C) / P(C)<br>
+            P(B | C) = 0.21 / 0.25
+          </div>
+        </div>
+      </div>
+      <div class="result-box">
+        <div class="result-label">Resultado inciso b)</div>
+        <div class="result-value">P(B | C) = 0.84 &nbsp;(84%)</div>
+      </div>
+    </section>
+
+    <!-- Inciso c -->
+    <section class="section">
+      <h2 class="section-title">c) <span>P(B | A ∩ C)</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
+        Probabilidad de que use celular, <em>dado que</em> revisó correo electrónico Y trajo laptop.
+      </p>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Obtener P(A ∩ C)</h4>
+          <div class="math-block">
+            P(A ∩ C) = P(A | C) · P(C)<br>
+            P(A ∩ C) = 0.88 × 0.25<br>
+            P(A ∩ C) = 0.22
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Obtener la triple intersección P(A ∩ B ∩ C)</h4>
+          <div class="math-block">
+            P(A ∩ B ∩ C) = P(C | B) × P(A ∩ B)<br>
+            P(A ∩ B ∩ C) = 0.70 × 0.23<br>
+            P(A ∩ B ∩ C) = 0.161
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Calcular la probabilidad condicional final</h4>
+          <div class="math-block">
+            P(B | A ∩ C) = P(A ∩ B ∩ C) / P(A ∩ C)<br>
+            P(B | A ∩ C) = 0.161 / 0.22<br>
+            P(B | A ∩ C) = 0.732
+          </div>
+        </div>
+      </div>
+      <div class="result-box">
+        <div class="result-label">Resultado inciso c)</div>
+        <div class="result-value">P(B | A ∩ C) ≈ 0.73 &nbsp;(73.2%)</div>
+      </div>
+    </section>
+
+    <!-- Resumen -->
+    <section class="section">
+      <h2 class="section-title">📊 <span>Resumen Final</span></h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Inciso</th><th>Expresión</th><th>Probabilidad</th><th>Porcentaje</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>a)</td><td>P(B | A)</td><td>0.575</td><td>57.5%</td></tr>
+            <tr><td>b)</td><td>P(B | C)</td><td>0.84</td><td>84%</td></tr>
+            <tr><td>c)</td><td>P(B | A ∩ C)</td><td>0.73</td><td>73.2%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Diagrama de Venn -->
+    <section class="section">
+      <h2 class="section-title">🔵 <span>Diagrama de Venn</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
+        A = Correo electrónico · B = Teléfono celular · C = Laptop
+      </p>
+      <div class="chart-container" style="text-align:center">
+        <div class="chart-title">Probabilidades por región (vacacionistas)</div>
+        <canvas id="vennCanvas" width="640" height="400"></canvas>
+      </div>
+    </section>
+
+  </div>
+  <script src="app2.js"></script>
+</body>
+</html>

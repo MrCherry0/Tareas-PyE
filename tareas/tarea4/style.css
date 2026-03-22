@@ -1,0 +1,60 @@
+/* Tarea 4 — Specific Styles */
+:root { --accent: #4ecb71; }
+
+.page-badge { background: rgba(78,203,113,0.1); border-color: rgba(78,203,113,0.25); color: #4ecb71; }
+.page-title span { color: #4ecb71; }
+.section-title span { color: #4ecb71; }
+.math-block { color: #4ecb71; background: rgba(78,203,113,0.06); }
+.result-box { background: linear-gradient(135deg, rgba(78,203,113,0.08), transparent); border-color: rgba(78,203,113,0.3); }
+.result-box .result-value { color: #4ecb71; font-size: 1.6rem; }
+.step-num { background: rgba(78,203,113,0.1); border-color: rgba(78,203,113,0.3); color: #4ecb71; }
+.formula { color: #4ecb71; background: rgba(78,203,113,0.08); }
+.nav-back:hover { color: #4ecb71; border-color: rgba(78,203,113,0.4); }
+
+.interpretation-box {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: rgba(78,203,113,0.05);
+  border: 1px solid rgba(78,203,113,0.2);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-top: 16px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.int-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+.result-card {
+  background: var(--surface);
+  border: 1px solid rgba(78,203,113,0.2);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+
+.rc-num {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 900;
+  color: rgba(78,203,113,0.3);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.rc-title {
+  font-weight: 600; margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.rc-formula {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: #4ecb71;
+  margin-bottom: 8px;
+}
+
+.rc-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}

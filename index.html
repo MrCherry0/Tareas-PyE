@@ -1,11 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tareas PyE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio — Probabilidad y Estadística</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <h1>Salas Chavez Jose de Jesus</h1>
+  <!-- Background decoration -->
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+
+  <main class="container">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-badge">2025</div>
+      <h1 class="site-title">Portafolio de Tareas</h1>
+      <p class="site-subtitle">Probabilidad y Estadística</p>
+      <div class="student-info">
+        <div class="info-pill">
+          <span class="info-label">Estudiante</span>
+          <span class="info-value">Jose de Jesus Salas Chavez</span>
+        </div>
+        <div class="info-pill">
+          <span class="info-label">Asignatura</span>
+          <span class="info-value">Probabilidad y estadística</span>
+        </div>
+        <div class="info-pill">
+          <span class="info-label">Profesor</span>
+          <span class="info-value">Manzanilla</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Task Grid -->
+    <section class="tasks-grid">
+
+      <article class="task-card" style="--accent:#e8c547;">
+        <div class="card-number">01</div>
+        <div class="card-body">
+          <h2 class="card-title">Problema Histograma</h2>
+          <p class="card-desc">Análisis estadístico de calificaciones: histograma, diagrama de caja y bigotes, medidas de tendencia central y dispersión.</p>
+          <div class="card-tags">
+            <span>Histograma</span><span>Boxplot</span><span>Media</span><span>Cuartiles</span>
+          </div>
+        </div>
+        <a href="tareas/tarea1/tarea1.html" class="card-btn">Ver tarea →</a>
+      </article>
+
+      <article class="task-card" style="--accent:#5b8dee;">
+        <div class="card-number">02</div>
+        <div class="card-body">
+          <h2 class="card-title">Problema 66 del Libro</h2>
+          <p class="card-desc">Probabilidad condicional con vacacionistas: correo, celular y laptop. Diagrama de Venn con tres conjuntos.</p>
+          <div class="card-tags">
+            <span>P. Condicional</span><span>Venn</span><span>Intersecciones</span>
+          </div>
+        </div>
+        <a href="tareas/tarea2/tarea2.html" class="card-btn">Ver tarea →</a>
+      </article>
+
+      <article class="task-card" style="--accent:#e85d8a;">
+        <div class="card-number">03</div>
+        <div class="card-body">
+          <h2 class="card-title">Distribuciones de Probabilidad</h2>
+          <p class="card-desc">Clasificación y análisis de distribuciones: Geométrica, Exponencial, Poisson, Binomial y Binomial Negativa.</p>
+          <div class="card-tags">
+            <span>Geométrica</span><span>Poisson</span><span>Binomial</span><span>Exponencial</span>
+          </div>
+        </div>
+        <a href="tareas/tarea3/tarea3.html" class="card-btn">Ver tarea →</a>
+      </article>
+
+      <article class="task-card" style="--accent:#4ecb71;">
+        <div class="card-number">04</div>
+        <div class="card-body">
+          <h2 class="card-title">Problemas de Covarianza</h2>
+          <p class="card-desc">Ejercicios 25 y 27: área esperada de un rectángulo y tiempo de espera con variables aleatorias continuas.</p>
+          <div class="card-tags">
+            <span>Covarianza</span><span>E(XY)</span><span>Uniforme</span><span>Esperanza</span>
+          </div>
+        </div>
+        <a href="tareas/tarea4/tarea4.html" class="card-btn">Ver tarea →</a>
+      </article>
+
+    </section>
+
+    <footer class="site-footer">
+      <p>Probabilidad y Estadística · Jose de Jesus Salas Chavez · 2025</p>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

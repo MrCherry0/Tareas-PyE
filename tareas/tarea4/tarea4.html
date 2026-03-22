@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tarea 4 — Problemas de Covarianza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="page-wrap">
+
+    <nav class="top-nav">
+      <a href="../../index.html" class="nav-back">← Volver al portafolio</a>
+      <span class="nav-breadcrumb">Tarea 4 / Covarianza</span>
+    </nav>
+
+    <header class="page-header">
+      <div class="page-badge">Tarea 04</div>
+      <h1 class="page-title">Problemas de<br><span style="color:var(--accent)">Covarianza</span></h1>
+      <p class="page-subtitle">Ejercicios 25 y 27: valor esperado de funciones de variables aleatorias independientes.</p>
+    </header>
+
+    <!-- ===== EJERCICIO 25 ===== -->
+    <section class="section">
+      <h2 class="section-title">📐 <span>Ejercicio 25</span> — Área Esperada del Rectángulo</h2>
+
+      <div class="problem-box">
+        <p>Un topógrafo quiere delimitar un <strong>cuadrado de lado L</strong>. Por error mide un rectángulo con:</p>
+        <ul style="margin:10px 0 10px 20px;line-height:2;color:var(--text-muted)">
+          <li>lado norte-sur <span class="formula">X</span></li>
+          <li>lado este-oeste <span class="formula">Y</span></li>
+        </ul>
+        <p>Donde <span class="formula">X</span> y <span class="formula">Y</span> son independientes y
+          <span class="formula">X, Y ~ U[L−A, L+A]</span></p>
+        <p style="margin-top:10px"><strong>Se pide:</strong> el área esperada del rectángulo.</p>
+      </div>
+
+      <!-- Paso 1 -->
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Área del rectángulo</h4>
+          <p>El área es el producto de los dos lados:</p>
+          <div class="math-block">A = X · Y<br>Queremos: E(A) = E(XY)</div>
+        </div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Usar independencia</h4>
+          <p>Si <span class="formula">X</span> y <span class="formula">Y</span> son independientes, la esperanza del producto es el producto de esperanzas:</p>
+          <div class="math-block">E(XY) = E(X) · E(Y)</div>
+        </div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Esperanza de una distribución uniforme</h4>
+          <p>Para <span class="formula">X ~ U(a, b)</span>, la media es:</p>
+          <div class="math-block">E(X) = (a + b) / 2</div>
+          <p style="margin-top:10px">Aquí <span class="formula">a = L − A</span> y <span class="formula">b = L + A</span>, entonces:</p>
+          <div class="math-block">
+            E(X) = ((L − A) + (L + A)) / 2<br>
+            E(X) = 2L / 2<br>
+            E(X) = L
+          </div>
+          <p style="margin-top:10px;color:var(--text-muted)">Igualmente, <span class="formula">E(Y) = L</span></p>
+        </div>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Área esperada</h4>
+          <div class="math-block">
+            E(XY) = E(X) · E(Y)<br>
+            E(XY) = L · L<br>
+            E(XY) = L²
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-label">Resultado Ejercicio 25</div>
+        <div class="result-value">E(A) = L²</div>
+      </div>
+
+      <div class="interpretation-box">
+        <div class="int-icon">💡</div>
+        <div>
+          <strong>Interpretación:</strong> En promedio, el área del rectángulo medido coincide exactamente con el área del cuadrado deseado (L²). El error de medición no sesga el resultado esperado, ya que las desviaciones se cancelan en promedio.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EJERCICIO 27 ===== -->
+    <section class="section">
+      <h2 class="section-title">⏱ <span>Ejercicio 27</span> — Tiempo Esperado de Espera</h2>
+
+      <div class="problem-box">
+        <p><strong>Annie y Alvie</strong> acuerdan encontrarse para desayunar entre <strong>12:00 y 1:00 PM</strong>.</p>
+        <ul style="margin:10px 0 10px 20px;line-height:2;color:var(--text-muted)">
+          <li><span class="formula">X</span> = hora de llegada de Annie</li>
+          <li><span class="formula">Y</span> = hora de llegada de Alvie</li>
+        </ul>
+        <p>Las variables son independientes con densidades:</p>
+        <div class="math-block" style="margin-top:10px">
+          fₓ(x) = 3x² &nbsp;&nbsp; 0 ≤ x ≤ 1<br>
+          f_Y(y) = 2y &nbsp;&nbsp; 0 ≤ y ≤ 1
+        </div>
+        <p style="margin-top:12px"><strong>Se pide:</strong> ¿Cuál es el tiempo esperado que la primera persona en llegar debe esperar?</p>
+        <p style="color:var(--text-muted);font-size:.88rem;margin-top:8px">Sugerencia: h(X,Y) = |X − Y|</p>
+      </div>
+
+      <!-- Paso 1 -->
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Variable que queremos calcular</h4>
+          <p>El tiempo de espera es la diferencia absoluta entre las horas de llegada:</p>
+          <div class="math-block">E(|X − Y|)</div>
+        </div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Densidad conjunta (por independencia)</h4>
+          <div class="math-block">
+            f_{X,Y}(x, y) = fₓ(x) · f_Y(y)<br>
+            f_{X,Y}(x, y) = 3x² · 2y<br>
+            f_{X,Y}(x, y) = 6x²y
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Integral de esperanza — dividir en dos regiones</h4>
+          <div class="math-block">E(|X − Y|) = ∫₀¹ ∫₀¹ |x − y| · 6x²y dx dy</div>
+          <p style="margin-top:12px;font-weight:600">Región 1: x &gt; y</p>
+          <div class="math-block">
+            ∫₀¹ ∫₀ˣ (x − y) · 6x²y dy dx<br>
+            Resultado = 1/6
+          </div>
+          <p style="margin-top:12px;font-weight:600">Región 2: y &gt; x</p>
+          <div class="math-block">
+            ∫₀¹ ∫₀ʸ (y − x) · 6x²y dx dy<br>
+            Resultado = 1/12
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Resultado final</h4>
+          <div class="math-block">
+            E(|X − Y|) = 1/6 + 1/12<br>
+            E(|X − Y|) = 2/12 + 1/12<br>
+            E(|X − Y|) = 3/12<br>
+            E(|X − Y|) = 1/4
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box">
+        <div class="result-label">Resultado Ejercicio 27</div>
+        <div class="result-value">E(|X − Y|) = 1/4 hora = 15 minutos</div>
+      </div>
+
+      <div class="interpretation-box">
+        <div class="int-icon">💡</div>
+        <div>
+          <strong>Interpretación:</strong> El tiempo esperado que la primera persona en llegar debe esperar es <strong>15 minutos</strong>. 
+          El intervalo total es 1 hora, y dado que Annie llega con distribución cúbica sesgada hacia el final 
+          y Alvie con distribución triangular, en promedio la espera es un cuarto de hora.
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumen -->
+    <section class="section">
+      <h2 class="section-title">📊 <span>Resumen de Resultados</span></h2>
+      <div class="grid-2">
+        <div class="result-card">
+          <div class="rc-num">25</div>
+          <div class="rc-body">
+            <div class="rc-title">Área esperada del rectángulo</div>
+            <div class="rc-formula">E(A) = L²</div>
+            <p class="rc-note">El área promedio coincide con la del cuadrado deseado.</p>
+          </div>
+        </div>
+        <div class="result-card">
+          <div class="rc-num">27</div>
+          <div class="rc-body">
+            <div class="rc-title">Tiempo esperado de espera</div>
+            <div class="rc-formula">E(|X−Y|) = ¼ hora</div>
+            <p class="rc-note">En promedio, la primera persona espera 15 minutos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <script src="app4.js"></script>
+</body>
+</html>

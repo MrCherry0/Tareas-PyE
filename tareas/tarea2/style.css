@@ -1,0 +1,37 @@
+/* Tarea 2 — Specific Styles */
+:root { --accent: #5b8dee; }
+
+.page-badge { background: rgba(91,141,238,0.1); border-color: rgba(91,141,238,0.25); color: #5b8dee; }
+.page-title span { color: #5b8dee; }
+.section-title span { color: #5b8dee; }
+.math-block { color: #5b8dee; background: rgba(91,141,238,0.06); }
+.result-box { background: linear-gradient(135deg, rgba(91,141,238,0.08), transparent); border-color: rgba(91,141,238,0.3); }
+.result-box .result-value { color: #5b8dee; }
+.step-num { background: rgba(91,141,238,0.1); border-color: rgba(91,141,238,0.3); color: #5b8dee; }
+.btn { border-color: rgba(91,141,238,0.4); background: rgba(91,141,238,0.08); color: #5b8dee; }
+.btn:hover { background: rgba(91,141,238,0.18); border-color: #5b8dee; }
+.nav-back:hover { color: #5b8dee; border-color: rgba(91,141,238,0.4); }
+
+/* Event cards */
+.event-card {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.event-letter {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 900;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 10px;
+}
+
+.event-a .event-letter { background: rgba(91,141,238,0.15); color: #5b8dee; }
+.event-b .event-letter { background: rgba(232,197,71,0.15); color: #e8c547; }
+.event-c .event-letter { background: rgba(78,203,113,0.15); color: #4ecb71; }
+
+.event-name { font-weight: 500; font-size: 0.9rem; margin-bottom: 4px; }
+.event-prob { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tarea 1 — Problema Histograma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="page-wrap">
+
+    <!-- Navigation -->
+    <nav class="top-nav">
+      <a href="../../index.html" class="nav-back">← Volver al portafolio</a>
+      <span class="nav-breadcrumb">Tarea 1 / Histograma</span>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+      <div class="page-badge">Tarea 01</div>
+      <h1 class="page-title">Problema Histograma<br><span style="color:var(--accent)">Análisis Estadístico</span></h1>
+      <p class="page-subtitle">Análisis del desempeño de estudiantes mediante herramientas estadísticas y representaciones gráficas.</p>
+    </header>
+
+    <!-- Problema -->
+    <section class="section">
+      <h2 class="section-title">📋 <span>Planteamiento del Problema</span></h2>
+      <div class="problem-box">
+        <p>Un profesor registró las calificaciones de 25 estudiantes en un examen de estadística para analizar el desempeño del grupo mediante herramientas estadísticas y representaciones gráficas.</p>
+      </div>
+    </section>
+
+    <!-- Generar Datos -->
+    <section class="section">
+      <h2 class="section-title">📊 <span>Tabla de Datos</span></h2>
+      <div class="btn-group">
+        <button class="btn" id="btnGenerar">🎲 Generar datos</button>
+      </div>
+      <div class="table-wrap" id="tablaRaw" style="display:none">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Materia A</th>
+              <th>Materia B</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyRaw"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Ordenar Datos -->
+    <section class="section" id="seccionOrdenar" style="display:none">
+      <h2 class="section-title">🔢 <span>Datos Ordenados</span></h2>
+      <div class="btn-group">
+        <select id="selectMateria">
+          <option value="A">Materia A</option>
+          <option value="B">Materia B</option>
+        </select>
+        <button class="btn" id="btnOrdenar">↑ Ordenar de menor a mayor</button>
+      </div>
+      <div class="table-wrap" id="tablaOrdenada" style="display:none">
+        <table>
+          <thead>
+            <tr>
+              <th>Posición</th>
+              <th>Calificación</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyOrdenada"></tbody>
+        </table>
+      </div>
+      <p id="datosOrdenadosTexto" class="math-block" style="display:none;word-break:break-all;"></p>
+    </section>
+
+    <!-- Cálculos Estadísticos -->
+    <section class="section" id="seccionCalcs" style="display:none">
+      <h2 class="section-title">📐 <span>Cálculos Estadísticos</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px;">Cálculos automáticos basados en los datos ordenados de la materia seleccionada.</p>
+      <div class="table-wrap">
+        <table id="tablaCalcs">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Fórmula</th>
+              <th>Cálculo</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyCalcs"></tbody>
+        </table>
+      </div>
+
+      <!-- Interpretación -->
+      <div class="card" id="interpretacion" style="margin-top:20px"></div>
+    </section>
+
+    <!-- Histograma -->
+    <section class="section" id="seccionHistograma" style="display:none">
+      <h2 class="section-title">📈 <span>Histograma de Frecuencias</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px;">Eje X: intervalos de 10 en 10 (0–100). Eje Y: frecuencia de calificaciones.</p>
+      <div class="chart-container">
+        <div class="chart-title">Distribución de Calificaciones</div>
+        <canvas id="histogramaChart" height="280"></canvas>
+      </div>
+    </section>
+
+    <!-- Boxplot -->
+    <section class="section" id="seccionBoxplot" style="display:none">
+      <h2 class="section-title">📦 <span>Diagrama de Caja y Bigotes</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px;">Representación visual del resumen de cinco números estadísticos.</p>
+      <div class="chart-container">
+        <div class="chart-title">Boxplot — Distribución de la Materia</div>
+        <canvas id="boxplotChart" height="400"></canvas>
+      </div>
+      <!-- Leyenda del boxplot -->
+      <div class="boxplot-legend" id="boxplotLegend"></div>
+    </section>
+
+  </div>
+
+  <script src="app1.js"></script>
+</body>
+</html>

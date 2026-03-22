@@ -1,0 +1,69 @@
+/* Tarea 3 — Specific Styles */
+:root { --accent: #e85d8a; }
+
+.page-badge { background: rgba(232,93,138,0.1); border-color: rgba(232,93,138,0.25); color: #e85d8a; }
+.page-title span { color: #e85d8a; }
+.section-title span { color: #e85d8a; }
+.math-block { color: #e85d8a; background: rgba(232,93,138,0.06); }
+.result-box { background: linear-gradient(135deg, rgba(232,93,138,0.08), transparent); border-color: rgba(232,93,138,0.3); }
+.result-box .result-value { color: #e85d8a; }
+.step-num { background: rgba(232,93,138,0.1); border-color: rgba(232,93,138,0.3); color: #e85d8a; }
+.formula { color: #e85d8a; background: rgba(232,93,138,0.08); }
+.nav-back:hover { color: #e85d8a; border-color: rgba(232,93,138,0.4); }
+
+/* Distribution layout */
+.dist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 680px) {
+  .dist-grid { grid-template-columns: 1fr; }
+}
+
+.dist-block {
+  margin-bottom: 20px;
+}
+
+.dist-block:last-child { margin-bottom: 0; }
+
+.dist-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+  color: #e85d8a;
+}
+
+.dist-section {
+  border-left: 2px solid rgba(232,93,138,0.2);
+  padding-left: 20px;
+}
+
+.prop-list {
+  list-style: none;
+  padding: 0;
+}
+
+.prop-list li {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  padding: 4px 0 4px 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.prop-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #e85d8a;
+}
+
+.dist-chart-col .chart-container {
+  margin-bottom: 0;
+}
