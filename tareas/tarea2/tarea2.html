@@ -14,86 +14,217 @@
   <div class="bg-grid"></div>
   <div class="page-wrap">
 
-    <!-- Nav -->
     <nav class="top-nav">
       <a href="../../index.html" class="nav-back">← Volver al portafolio</a>
       <span class="nav-breadcrumb">Tarea 2 / Problema 66</span>
     </nav>
 
-    <!-- Header -->
     <header class="page-header">
       <div class="page-badge">Tarea 02</div>
       <h1 class="page-title">Problema 66 del Libro<br><span style="color:var(--accent)">Probabilidad Condicional</span></h1>
       <p class="page-subtitle">Análisis de probabilidad condicional con vacacionistas y sus hábitos de trabajo.</p>
     </header>
 
-    <!-- Transcripción del problema -->
+    <!-- TRANSCRIPCIÓN -->
     <section class="section">
-      <h2 class="section-title">📋 <span>Transcripción del Problema</span></h2>
+      <h2 class="section-title">📋 <span>Transcripción del Problema 66</span></h2>
       <div class="problem-box">
         <p>Considere la siguiente información sobre vacacionistas (basada en parte en una encuesta reciente de Travelocity):</p>
-        <ul style="margin:12px 0 12px 20px;line-height:2;color:var(--text-muted)">
+        <ul style="margin:12px 0 12px 20px;line-height:2.1;color:var(--text-muted)">
           <li>40% revisan su correo electrónico de trabajo.</li>
           <li>30% utilizan un teléfono celular para permanecer en contacto con su trabajo.</li>
           <li>25% trajeron una computadora portátil consigo.</li>
-          <li>23% revisan su correo electrónico de trabajo y usan un teléfono celular para permanecer en contacto.</li>
+          <li>23% revisan su correo electrónico de trabajo <em>y</em> usan un teléfono celular para permanecer en contacto.</li>
           <li>51% ni revisan su correo electrónico de trabajo ni utilizan un teléfono celular para permanecer en contacto ni trajeron consigo una computadora portátil.</li>
           <li>88 de cada 100 que traen una computadora portátil también revisan su correo electrónico de trabajo.</li>
           <li>70 de cada 100 que utilizan un teléfono celular también traen una computadora portátil.</li>
         </ul>
       </div>
       <div class="problem-box" style="margin-top:0">
-        <p><b>Calcule:</b></p>
-        <ol style="margin:10px 0 0 20px;line-height:2;color:var(--text-muted)">
-          <li>¿Cuál es la probabilidad de que un vacacionista que revisa su correo electrónico también utilice un teléfono celular?</li>
-          <li>¿Cuál es la probabilidad de que alguien que trae una computadora portátil también utilice un teléfono celular?</li>
-          <li>Si el vacacionista revisó su correo electrónico y trajo una computadora portátil, ¿cuál es la probabilidad de que use un teléfono celular?</li>
+        <p><strong>Calcule:</strong></p>
+        <ol style="margin:10px 0 0 20px;line-height:2.1;color:var(--text-muted)">
+          <li>¿Cuál es la probabilidad de que un vacacionista seleccionado al azar que revisa su correo electrónico de trabajo también utilice un teléfono celular para permanecer en contacto?</li>
+          <li>¿Cuál es la probabilidad de que alguien que trae una computadora portátil también utilice un teléfono celular para permanecer en contacto?</li>
+          <li>Si el vacacionista seleccionado al azar revisó su correo electrónico de trabajo y trajo una computadora portátil, ¿cuál es la probabilidad de que use un teléfono celular para permanecer en contacto?</li>
         </ol>
       </div>
     </section>
 
-    <!-- Definición de eventos -->
+    <!-- DEFINICIÓN DE EVENTOS -->
     <section class="section">
       <h2 class="section-title">🔤 <span>Definición de Eventos</span></h2>
       <div class="grid-2">
         <div class="event-card event-a">
           <div class="event-letter">A</div>
           <div>
-            <div class="event-name">Revisa correo de trabajo</div>
+            <div class="event-name">Revisar correo electrónico del trabajo</div>
             <div class="event-prob">P(A) = 0.40</div>
           </div>
         </div>
         <div class="event-card event-b">
           <div class="event-letter">B</div>
           <div>
-            <div class="event-name">Usa teléfono celular</div>
+            <div class="event-name">Usar teléfono celular para contacto con el trabajo</div>
             <div class="event-prob">P(B) = 0.30</div>
           </div>
         </div>
         <div class="event-card event-c">
           <div class="event-letter">C</div>
           <div>
-            <div class="event-name">Trae computadora portátil</div>
+            <div class="event-name">Traer computadora portátil</div>
             <div class="event-prob">P(C) = 0.25</div>
           </div>
         </div>
         <div class="card">
-          <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim);margin-bottom:8px">DATOS ADICIONALES</div>
-          <div style="font-size:0.88rem;color:var(--text-muted);line-height:2">
-            P(A ∩ B) = 0.23<br>
-            P(A | C) = 0.88<br>
-            P(C | B) = 0.70
+          <div class="datos-label">Datos del problema</div>
+          <div class="datos-grid">
+            <span class="dato-key">P(A ∩ B)</span><span class="dato-val">= 0.23</span>
+            <span class="dato-key">P(ninguno)</span><span class="dato-val">= 0.51</span>
+            <span class="dato-key">P(A | C)</span><span class="dato-val">= 0.88</span>
+            <span class="dato-key">P(C | B)</span><span class="dato-val">= 0.70</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Inciso a -->
+    <!-- DATOS DERIVADOS -->
     <section class="section">
-      <h2 class="section-title">a) <span>P(B | A)</span></h2>
-      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
-        Probabilidad de que use celular, <em>dado que</em> revisa correo electrónico.
+      <h2 class="section-title">🔢 <span>Datos Derivados</span></h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Unión total P(A ∪ B ∪ C)</h4>
+          <div class="math-block">
+            P(A ∪ B ∪ C) = 1 − P(ninguno)<br>
+            P(A ∪ B ∪ C) = 1 − 0.51 = <strong>0.49</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>P(A ∩ C) a partir de P(A | C)</h4>
+          <div class="math-block">
+            88 de cada 100 con laptop revisan correo → P(A | C) = 0.88<br>
+            P(A ∩ C) = P(A | C) · P(C) = 0.88 × 0.25 = <strong>0.22</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>P(B ∩ C) a partir de P(C | B)</h4>
+          <div class="math-block">
+            70 de cada 100 con celular traen laptop → P(C | B) = 0.70<br>
+            P(B ∩ C) = P(C | B) · P(B) = 0.70 × 0.30 = <strong>0.21</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Intersección triple P(A ∩ B ∩ C) — fórmula de la unión de tres eventos</h4>
+          <div class="math-block">
+            P(A∪B∪C) = P(A) + P(B) + P(C) − P(A∩B) − P(A∩C) − P(B∩C) + P(A∩B∩C)<br><br>
+            0.49 = 0.40 + 0.30 + 0.25 − 0.23 − 0.22 − 0.21 + P(A∩B∩C)<br>
+            0.49 = 0.95 − 0.66 + P(A∩B∩C)<br>
+            0.49 = 0.29 + P(A∩B∩C)<br>
+            <strong>P(A ∩ B ∩ C) = 0.20</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGIONES DEL DIAGRAMA DE VENN -->
+    <section class="section">
+      <h2 class="section-title">📊 <span>Probabilidades de Cada Región</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:20px">
+        Se calculan las intersecciones dobles <em>sin</em> la triple, y luego las regiones exclusivas de cada conjunto.
       </p>
+
+      <div class="subsection-label">Intersecciones dobles (excluida la triple)</div>
+      <div class="calc-row">
+        <span class="calc-expr">A ∩ B solamente</span>
+        <span class="calc-steps">0.23 − 0.20</span>
+        <span class="calc-result">= 0.03</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-expr">A ∩ C solamente</span>
+        <span class="calc-steps">0.22 − 0.20</span>
+        <span class="calc-result">= 0.02</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-expr">B ∩ C solamente</span>
+        <span class="calc-steps">0.21 − 0.20</span>
+        <span class="calc-result">= 0.01</span>
+      </div>
+
+      <div class="subsection-label" style="margin-top:20px">Regiones exclusivas (solo un conjunto)</div>
+      <div class="calc-row">
+        <span class="calc-expr">Solo A</span>
+        <span class="calc-steps">0.40 − (0.03 + 0.02 + 0.20)</span>
+        <span class="calc-result">= 0.15</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-expr">Solo B</span>
+        <span class="calc-steps">0.30 − (0.03 + 0.01 + 0.20)</span>
+        <span class="calc-result">= 0.06</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-expr">Solo C</span>
+        <span class="calc-steps">0.25 − (0.02 + 0.01 + 0.20)</span>
+        <span class="calc-result">= 0.02</span>
+      </div>
+
+      <div class="table-wrap" style="margin-top:24px">
+        <table>
+          <thead>
+            <tr><th>Región</th><th>Descripción</th><th>Probabilidad</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Solo A</td><td>Solo revisa correo</td><td>0.15</td></tr>
+            <tr><td>Solo B</td><td>Solo usa celular</td><td>0.06</td></tr>
+            <tr><td>Solo C</td><td>Solo trae laptop</td><td>0.02</td></tr>
+            <tr><td>A ∩ B solamente</td><td>Correo y celular, sin laptop</td><td>0.03</td></tr>
+            <tr><td>A ∩ C solamente</td><td>Correo y laptop, sin celular</td><td>0.02</td></tr>
+            <tr><td>B ∩ C solamente</td><td>Celular y laptop, sin correo</td><td>0.01</td></tr>
+            <tr><td>A ∩ B ∩ C</td><td>Los tres</td><td>0.20</td></tr>
+            <tr><td>Ninguno</td><td>Ninguna actividad de trabajo</td><td>0.51</td></tr>
+            <tr style="font-weight:700"><td>Total</td><td></td><td>1.00 ✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DIAGRAMA DE VENN -->
+    <section class="section">
+      <h2 class="section-title">🔵 <span>Diagrama de Venn</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
+        Cada región está coloreada de forma distinta y etiquetada con su probabilidad exacta.<br>
+        <strong>A</strong> = Correo &nbsp;·&nbsp; <strong>B</strong> = Celular &nbsp;·&nbsp; <strong>C</strong> = Laptop
+      </p>
+      <div class="chart-container" style="padding:0;overflow:hidden;background:var(--surface)">
+        <canvas id="vennCanvas" style="display:block;width:100%"></canvas>
+      </div>
+      <div class="venn-legend">
+        <div class="vl-item"><span class="vl-dot" style="background:#3d70d6"></span>Solo A</div>
+        <div class="vl-item"><span class="vl-dot" style="background:#c9a830"></span>Solo B</div>
+        <div class="vl-item"><span class="vl-dot" style="background:#36a85a"></span>Solo C</div>
+        <div class="vl-item"><span class="vl-dot" style="background:#a050c0"></span>A ∩ B</div>
+        <div class="vl-item"><span class="vl-dot" style="background:#30a890"></span>A ∩ C</div>
+        <div class="vl-item"><span class="vl-dot" style="background:#c07830"></span>B ∩ C</div>
+        <div class="vl-item"><span class="vl-dot" style="background:#606080"></span>A ∩ B ∩ C</div>
+        <div class="vl-item"><span class="vl-dot" style="background:#222"></span>Ninguno</div>
+      </div>
+    </section>
+
+    <!-- INCISO A -->
+    <section class="section">
+      <h2 class="section-title">a) <span>P(B | A) — Celular dado que revisa correo</span></h2>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
@@ -105,7 +236,7 @@
         <div class="step-num">2</div>
         <div class="step-content">
           <h4>Sustituir valores</h4>
-          <div class="math-block">P(B | A) = 0.23 / 0.40</div>
+          <div class="math-block">P(B | A) = 0.23 / 0.40 = 0.575</div>
         </div>
       </div>
       <div class="result-box">
@@ -114,30 +245,23 @@
       </div>
     </section>
 
-    <!-- Inciso b -->
+    <!-- INCISO B -->
     <section class="section">
-      <h2 class="section-title">b) <span>P(B | C)</span></h2>
-      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
-        Probabilidad de que use celular, <em>dado que</em> trae computadora portátil.
-      </p>
+      <h2 class="section-title">b) <span>P(B | C) — Celular dado que trae laptop</span></h2>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h4>Obtener P(C ∩ B) usando P(C | B)</h4>
-          <div class="math-block">
-            P(C ∩ B) = P(C | B) · P(B)<br>
-            P(C ∩ B) = 0.70 × 0.30<br>
-            P(C ∩ B) = 0.21
-          </div>
+          <h4>P(B ∩ C) ya calculado</h4>
+          <div class="math-block">P(B ∩ C) = P(C | B) · P(B) = 0.70 × 0.30 = 0.21</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h4>Aplicar fórmula de probabilidad condicional</h4>
+          <h4>Fórmula de probabilidad condicional</h4>
           <div class="math-block">
             P(B | C) = P(B ∩ C) / P(C)<br>
-            P(B | C) = 0.21 / 0.25
+            P(B | C) = 0.21 / 0.25 = 0.84
           </div>
         </div>
       </div>
@@ -147,54 +271,39 @@
       </div>
     </section>
 
-    <!-- Inciso c -->
+    <!-- INCISO C -->
     <section class="section">
-      <h2 class="section-title">c) <span>P(B | A ∩ C)</span></h2>
-      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
-        Probabilidad de que use celular, <em>dado que</em> revisó correo electrónico Y trajo laptop.
-      </p>
+      <h2 class="section-title">c) <span>P(B | A ∩ C) — Celular dado correo y laptop</span></h2>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h4>Obtener P(A ∩ C)</h4>
+          <h4>Valores ya calculados</h4>
           <div class="math-block">
-            P(A ∩ C) = P(A | C) · P(C)<br>
-            P(A ∩ C) = 0.88 × 0.25<br>
-            P(A ∩ C) = 0.22
+            P(A ∩ C) = 0.22<br>
+            P(A ∩ B ∩ C) = 0.20 &nbsp;(obtenido con la fórmula de la unión)
           </div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h4>Obtener la triple intersección P(A ∩ B ∩ C)</h4>
-          <div class="math-block">
-            P(A ∩ B ∩ C) = P(C | B) × P(A ∩ B)<br>
-            P(A ∩ B ∩ C) = 0.70 × 0.23<br>
-            P(A ∩ B ∩ C) = 0.161
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>Calcular la probabilidad condicional final</h4>
+          <h4>Fórmula de probabilidad condicional</h4>
           <div class="math-block">
             P(B | A ∩ C) = P(A ∩ B ∩ C) / P(A ∩ C)<br>
-            P(B | A ∩ C) = 0.161 / 0.22<br>
-            P(B | A ∩ C) = 0.732
+            P(B | A ∩ C) = 0.20 / 0.22<br>
+            P(B | A ∩ C) = 0.909
           </div>
         </div>
       </div>
       <div class="result-box">
         <div class="result-label">Resultado inciso c)</div>
-        <div class="result-value">P(B | A ∩ C) ≈ 0.73 &nbsp;(73.2%)</div>
+        <div class="result-value">P(B | A ∩ C) ≈ 0.91 &nbsp;(91%)</div>
       </div>
     </section>
 
-    <!-- Resumen -->
+    <!-- RESUMEN -->
     <section class="section">
-      <h2 class="section-title">📊 <span>Resumen Final</span></h2>
+      <h2 class="section-title">✅ <span>Resumen Final</span></h2>
       <div class="table-wrap">
         <table>
           <thead>
@@ -203,21 +312,9 @@
           <tbody>
             <tr><td>a)</td><td>P(B | A)</td><td>0.575</td><td>57.5%</td></tr>
             <tr><td>b)</td><td>P(B | C)</td><td>0.84</td><td>84%</td></tr>
-            <tr><td>c)</td><td>P(B | A ∩ C)</td><td>0.73</td><td>73.2%</td></tr>
+            <tr><td>c)</td><td>P(B | A ∩ C)</td><td>≈ 0.91</td><td>≈ 91%</td></tr>
           </tbody>
         </table>
-      </div>
-    </section>
-
-    <!-- Diagrama de Venn -->
-    <section class="section">
-      <h2 class="section-title">🔵 <span>Diagrama de Venn</span></h2>
-      <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px">
-        A = Correo electrónico · B = Teléfono celular · C = Laptop
-      </p>
-      <div class="chart-container" style="text-align:center">
-        <div class="chart-title">Probabilidades por región (vacacionistas)</div>
-        <canvas id="vennCanvas" width="640" height="400"></canvas>
       </div>
     </section>
 
