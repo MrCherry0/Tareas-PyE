@@ -23,285 +23,281 @@
     <header class="page-header">
       <div class="page-badge">Tarea 03</div>
       <h1 class="page-title">Distribuciones de<br><span style="color:var(--accent)">Probabilidad</span></h1>
-      <p class="page-subtitle">Clasificación y análisis de las principales distribuciones de probabilidad discretas y continuas.</p>
+      <p class="page-subtitle">Simuladores interactivos. Mueve los parámetros y observa cómo se desplaza la función sobre ejes fijos.</p>
     </header>
 
-    <!-- Tabla de clasificación -->
+    <!-- TABLA RESUMEN -->
     <section class="section">
-      <h2 class="section-title">📊 <span>Clasificación General</span></h2>
+      <h2 class="section-title">📋 <span>Resumen Rápido</span></h2>
       <div class="table-wrap">
         <table>
-          <thead>
-            <tr><th>Tipo de proceso</th><th>Distribución típica</th></tr>
-          </thead>
+          <thead><tr><th>Distribución</th><th>Función</th><th>Tipo</th></tr></thead>
           <tbody>
-            <tr><td>Número de éxitos en intentos independientes</td><td>Binomial</td></tr>
-            <tr><td>Intentos hasta el primer éxito</td><td>Geométrica</td></tr>
-            <tr><td>Intentos hasta varios éxitos</td><td>Binomial negativa</td></tr>
-            <tr><td>Número de eventos en un intervalo</td><td>Poisson</td></tr>
-            <tr><td>Tiempo entre eventos</td><td>Exponencial</td></tr>
+            <tr><td>Normal</td><td class="formula-cell">f(x) = (1/σ√2π) · e^−(x−μ)²/2σ²</td><td>Continua</td></tr>
+            <tr><td>Binomial</td><td class="formula-cell">P(X=k) = C(n,k) · pᵏ · (1−p)ⁿ⁻ᵏ</td><td>Discreta</td></tr>
+            <tr><td>Geométrica</td><td class="formula-cell">P(X=k) = (1−p)ᵏ⁻¹ · p</td><td>Discreta</td></tr>
+            <tr><td>Binomial Negativa</td><td class="formula-cell">P(X=k) = C(k−1,r−1) · pʳ · (1−p)ᵏ⁻ʳ</td><td>Discreta</td></tr>
+            <tr><td>Poisson</td><td class="formula-cell">P(X=k) = e⁻λ · λᵏ / k!</td><td>Discreta</td></tr>
+            <tr><td>Exponencial</td><td class="formula-cell">f(x) = λ · e⁻λˣ</td><td>Continua</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- ===== 1. GEOMÉTRICA ===== -->
-    <section class="section dist-section" id="dist-geometrica">
-      <h2 class="section-title dist-num" style="--dn:'01'">1. <span>Distribución Geométrica</span></h2>
-
-      <div class="dist-grid">
-        <div class="dist-info">
-          <div class="dist-block">
-            <div class="dist-label">¿Qué modela?</div>
-            <p>El número de intentos necesarios hasta obtener el primer éxito.</p>
+    <!-- ═══════ 1. NORMAL ═══════ -->
+    <section class="section sim-section" id="sim-normal">
+      <div class="dist-header">
+        <div class="dist-num">01</div>
+        <div>
+          <h2 class="dist-title">Distribución <span>Normal</span></h2>
+          <p class="dist-subtitle">Función de densidad normal (gaussiana)</p>
+        </div>
+      </div>
+      <div class="dist-body">
+        <div class="dist-theory">
+          <div class="formula-block">
+            <div class="fb-label">Función de densidad</div>
+            <div class="fb-eq">f(x) = 1/(σ√2π) · e^−(x−μ)²/2σ²</div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Propiedades</div>
-            <ul class="prop-list">
-              <li>Ensayos independientes</li>
-              <li>Probabilidad de éxito constante <span class="formula">p</span></li>
-              <li>Solo dos resultados: éxito o fracaso</li>
-              <li>Proceso sin memoria</li>
-            </ul>
+          <div class="params-def">
+            <div class="param-row"><span class="param-sym">μ</span><span class="param-desc">= media (centro de la campana)</span></div>
+            <div class="param-row"><span class="param-sym">σ</span><span class="param-desc">= desviación estándar (ancho)</span></div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Variable aleatoria</div>
-            <p><span class="formula">X</span> = número de intentos hasta el primer éxito</p>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Función de probabilidad</div>
-            <div class="math-block">P(X = k) = (1 − p)^(k−1) · p<br>donde k = 1, 2, 3, ...</div>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Ejemplo simple</div>
-            <p>Lanzar una moneda con probabilidad de cara <span class="formula">p = 0.5</span> hasta obtener la primera cara.</p>
+          <div class="example-box">
+            <div class="ex-label">Ejemplo</div>
+            <p>Las estaturas de estudiantes tienen <strong>μ = 170, σ = 5</strong>. Se usa para calcular la probabilidad de que un estudiante mida entre 165 y 175 cm.</p>
           </div>
         </div>
-
-        <div class="dist-chart-col">
-          <div class="dist-block">
-            <div class="dist-label">Tabla de valores</div>
-            <table>
-              <thead><tr><th>k (intentos)</th><th>Probabilidad</th></tr></thead>
-              <tbody>
-                <tr><td>1</td><td>0.5000</td></tr>
-                <tr><td>2</td><td>0.2500</td></tr>
-                <tr><td>3</td><td>0.1250</td></tr>
-                <tr><td>4</td><td>0.0625</td></tr>
-              </tbody>
-            </table>
+        <div class="sim-panel">
+          <div class="sim-title">🎛 Simulador</div>
+          <div class="controls">
+            <div class="ctrl-group">
+              <label>μ (media) = <span id="normal-mu-val">0</span></label>
+              <input type="range" id="normal-mu" min="-20" max="20" value="0" step="0.5">
+            </div>
+            <div class="ctrl-group">
+              <label>σ (desv. estándar) = <span id="normal-sigma-val">1.0</span></label>
+              <input type="range" id="normal-sigma" min="0.5" max="5" value="1" step="0.1">
+            </div>
           </div>
-          <div class="chart-container" style="margin-top:12px">
-            <div class="chart-title">Distribución Geométrica (p = 0.5)</div>
-            <canvas id="chartGeometrica" height="200"></canvas>
-          </div>
+          <div class="stat-pills" id="normal-stats"></div>
         </div>
+      </div>
+      <div class="full-chart-wrap">
+        <canvas id="chartNormal"></canvas>
       </div>
     </section>
 
-    <!-- ===== 2. EXPONENCIAL ===== -->
-    <section class="section dist-section" id="dist-exponencial">
-      <h2 class="section-title">2. <span>Distribución Exponencial</span></h2>
-
-      <div class="dist-grid">
-        <div class="dist-info">
-          <div class="dist-block">
-            <div class="dist-label">¿Qué modela?</div>
-            <p>El tiempo entre eventos en un proceso continuo.</p>
+    <!-- ═══════ 2. BINOMIAL ═══════ -->
+    <section class="section sim-section" id="sim-binomial">
+      <div class="dist-header">
+        <div class="dist-num">02</div>
+        <div>
+          <h2 class="dist-title">Distribución <span>Binomial</span></h2>
+          <p class="dist-subtitle">Función de probabilidad binomial</p>
+        </div>
+      </div>
+      <div class="dist-body">
+        <div class="dist-theory">
+          <div class="formula-block">
+            <div class="fb-label">Función de probabilidad</div>
+            <div class="fb-eq">P(X=k) = C(n,k) · pᵏ · (1−p)ⁿ⁻ᵏ</div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Propiedades</div>
-            <ul class="prop-list">
-              <li>Eventos independientes</li>
-              <li>Tasa constante <span class="formula">λ</span></li>
-              <li>Distribución continua</li>
-              <li>Propiedad sin memoria</li>
-            </ul>
+          <div class="params-def">
+            <div class="param-row"><span class="param-sym">n</span><span class="param-desc">= número de experimentos</span></div>
+            <div class="param-row"><span class="param-sym">k</span><span class="param-desc">= número de éxitos</span></div>
+            <div class="param-row"><span class="param-sym">p</span><span class="param-desc">= probabilidad de éxito</span></div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Variable aleatoria</div>
-            <p><span class="formula">X</span> = tiempo hasta el siguiente evento</p>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Función de densidad</div>
-            <div class="math-block">f(x) = λ · e^(−λx) &nbsp;&nbsp; con x ≥ 0</div>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Ejemplo simple</div>
-            <p>Tiempo entre llegadas de clientes con tasa <span class="formula">λ = 0.5</span>.</p>
-            <div class="math-block" style="margin-top:8px">f(x) = 0.5 · e^(−0.5x)</div>
+          <div class="example-box">
+            <div class="ex-label">Ejemplo</div>
+            <p>Se lanza una moneda <strong>10 veces</strong>. Probabilidad de obtener 3 caras:</p>
+            <div class="ex-formula">P(X=3) = C(10,3) · (0.5)³ · (0.5)⁷</div>
           </div>
         </div>
-
-        <div class="dist-chart-col">
-          <div class="chart-container">
-            <div class="chart-title">Distribución Exponencial (λ = 0.5)</div>
-            <canvas id="chartExponencial" height="220"></canvas>
+        <div class="sim-panel">
+          <div class="sim-title">🎛 Simulador</div>
+          <div class="controls">
+            <div class="ctrl-group">
+              <label>n (ensayos) = <span id="binom-n-val">10</span></label>
+              <input type="range" id="binom-n" min="1" max="40" value="10" step="1">
+            </div>
+            <div class="ctrl-group">
+              <label>p (prob. éxito) = <span id="binom-p-val">0.50</span></label>
+              <input type="range" id="binom-p" min="0.01" max="0.99" value="0.5" step="0.01">
+            </div>
           </div>
+          <div class="stat-pills" id="binom-stats"></div>
         </div>
+      </div>
+      <div class="full-chart-wrap">
+        <canvas id="chartBinomial"></canvas>
       </div>
     </section>
 
-    <!-- ===== 3. POISSON ===== -->
-    <section class="section dist-section" id="dist-poisson">
-      <h2 class="section-title">3. <span>Distribución de Poisson</span></h2>
-
-      <div class="dist-grid">
-        <div class="dist-info">
-          <div class="dist-block">
-            <div class="dist-label">¿Qué modela?</div>
-            <p>El número de eventos que ocurren en un intervalo fijo de tiempo o espacio.</p>
+    <!-- ═══════ 3. GEOMÉTRICA ═══════ -->
+    <section class="section sim-section" id="sim-geometrica">
+      <div class="dist-header">
+        <div class="dist-num">03</div>
+        <div>
+          <h2 class="dist-title">Distribución <span>Geométrica</span></h2>
+          <p class="dist-subtitle">Función de probabilidad geométrica</p>
+        </div>
+      </div>
+      <div class="dist-body">
+        <div class="dist-theory">
+          <div class="formula-block">
+            <div class="fb-label">Función de probabilidad</div>
+            <div class="fb-eq">P(X=k) = (1−p)ᵏ⁻¹ · p</div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Propiedades</div>
-            <ul class="prop-list">
-              <li>Eventos independientes</li>
-              <li>Tasa promedio constante <span class="formula">λ</span></li>
-              <li>Eventos raros pero posibles en cualquier momento</li>
-            </ul>
+          <div class="params-def">
+            <div class="param-row"><span class="param-sym">k</span><span class="param-desc">= intento donde ocurre el primer éxito</span></div>
+            <div class="param-row"><span class="param-sym">p</span><span class="param-desc">= probabilidad de éxito</span></div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Variable aleatoria</div>
-            <p><span class="formula">X</span> = número de eventos en un intervalo</p>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Función de probabilidad</div>
-            <div class="math-block">P(X = k) = (e^(−λ) · λ^k) / k!</div>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Ejemplo simple</div>
-            <p>Número de clientes que llegan por hora. Promedio: <span class="formula">λ = 3</span></p>
+          <div class="example-box">
+            <div class="ex-label">Ejemplo</div>
+            <p>Probabilidad de obtener cara por primera vez en el <strong>cuarto lanzamiento</strong>:</p>
+            <div class="ex-formula">P(X=4) = (0.5)³ · (0.5) = 0.0625</div>
           </div>
         </div>
-
-        <div class="dist-chart-col">
-          <div class="dist-block">
-            <div class="dist-label">Tabla de valores (λ = 3)</div>
-            <table>
-              <thead><tr><th>k</th><th>Probabilidad</th></tr></thead>
-              <tbody>
-                <tr><td>0</td><td>0.0498</td></tr>
-                <tr><td>1</td><td>0.1494</td></tr>
-                <tr><td>2</td><td>0.2240</td></tr>
-                <tr><td>3</td><td>0.2240</td></tr>
-                <tr><td>4</td><td>0.1680</td></tr>
-              </tbody>
-            </table>
+        <div class="sim-panel">
+          <div class="sim-title">🎛 Simulador</div>
+          <div class="controls">
+            <div class="ctrl-group">
+              <label>p (prob. éxito) = <span id="geo-p-val">0.30</span></label>
+              <input type="range" id="geo-p" min="0.01" max="0.99" value="0.3" step="0.01">
+            </div>
           </div>
-          <div class="chart-container" style="margin-top:12px">
-            <div class="chart-title">Distribución de Poisson (λ = 3)</div>
-            <canvas id="chartPoisson" height="200"></canvas>
-          </div>
+          <div class="stat-pills" id="geo-stats"></div>
         </div>
+      </div>
+      <div class="full-chart-wrap">
+        <canvas id="chartGeometrica"></canvas>
       </div>
     </section>
 
-    <!-- ===== 4. BINOMIAL ===== -->
-    <section class="section dist-section" id="dist-binomial">
-      <h2 class="section-title">4. <span>Distribución Binomial</span></h2>
-
-      <div class="dist-grid">
-        <div class="dist-info">
-          <div class="dist-block">
-            <div class="dist-label">¿Qué modela?</div>
-            <p>El número de éxitos en un número fijo de ensayos independientes.</p>
+    <!-- ═══════ 4. BINOMIAL NEGATIVA ═══════ -->
+    <section class="section sim-section" id="sim-binom-neg">
+      <div class="dist-header">
+        <div class="dist-num">04</div>
+        <div>
+          <h2 class="dist-title">Distribución <span>Binomial Negativa</span></h2>
+          <p class="dist-subtitle">Función de probabilidad binomial negativa</p>
+        </div>
+      </div>
+      <div class="dist-body">
+        <div class="dist-theory">
+          <div class="formula-block">
+            <div class="fb-label">Función de probabilidad</div>
+            <div class="fb-eq">P(X=k) = C(k−1,r−1) · pʳ · (1−p)ᵏ⁻ʳ</div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Propiedades</div>
-            <ul class="prop-list">
-              <li>Número fijo de ensayos <span class="formula">n</span></li>
-              <li>Ensayos independientes</li>
-              <li>Probabilidad de éxito constante <span class="formula">p</span></li>
-              <li>Dos resultados posibles</li>
-            </ul>
+          <div class="params-def">
+            <div class="param-row"><span class="param-sym">r</span><span class="param-desc">= número de éxitos deseados</span></div>
+            <div class="param-row"><span class="param-sym">k</span><span class="param-desc">= número de intentos</span></div>
+            <div class="param-row"><span class="param-sym">p</span><span class="param-desc">= probabilidad de éxito</span></div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Variable aleatoria</div>
-            <p><span class="formula">X</span> = número de éxitos en <span class="formula">n</span> ensayos</p>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Función de probabilidad</div>
-            <div class="math-block">P(X = k) = C(n,k) · p^k · (1−p)^(n−k)</div>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Ejemplo simple</div>
-            <p>Lanzar una moneda 5 veces. <span class="formula">n = 5, p = 0.5</span></p>
+          <div class="example-box">
+            <div class="ex-label">Ejemplo</div>
+            <p>Probabilidad de necesitar <strong>7 lanzamientos</strong> para obtener <strong>3 caras</strong>:</p>
+            <div class="ex-formula">P(X=7) = C(6,2) · (0.5)³ · (0.5)⁴</div>
           </div>
         </div>
-
-        <div class="dist-chart-col">
-          <div class="dist-block">
-            <div class="dist-label">Tabla de valores (n=5, p=0.5)</div>
-            <table>
-              <thead><tr><th>k (caras)</th><th>Probabilidad</th></tr></thead>
-              <tbody>
-                <tr><td>0</td><td>0.0313</td></tr>
-                <tr><td>1</td><td>0.1563</td></tr>
-                <tr><td>2</td><td>0.3125</td></tr>
-                <tr><td>3</td><td>0.3125</td></tr>
-                <tr><td>4</td><td>0.1563</td></tr>
-                <tr><td>5</td><td>0.0313</td></tr>
-              </tbody>
-            </table>
+        <div class="sim-panel">
+          <div class="sim-title">🎛 Simulador</div>
+          <div class="controls">
+            <div class="ctrl-group">
+              <label>r (éxitos deseados) = <span id="bn-r-val">3</span></label>
+              <input type="range" id="bn-r" min="1" max="15" value="3" step="1">
+            </div>
+            <div class="ctrl-group">
+              <label>p (prob. éxito) = <span id="bn-p-val">0.50</span></label>
+              <input type="range" id="bn-p" min="0.01" max="0.99" value="0.5" step="0.01">
+            </div>
           </div>
-          <div class="chart-container" style="margin-top:12px">
-            <div class="chart-title">Distribución Binomial (n=5, p=0.5)</div>
-            <canvas id="chartBinomial" height="200"></canvas>
-          </div>
+          <div class="stat-pills" id="bn-stats"></div>
         </div>
+      </div>
+      <div class="full-chart-wrap">
+        <canvas id="chartBinomNeg"></canvas>
       </div>
     </section>
 
-    <!-- ===== 5. BINOMIAL NEGATIVA ===== -->
-    <section class="section dist-section" id="dist-binom-neg">
-      <h2 class="section-title">5. <span>Distribución Binomial Negativa</span></h2>
-
-      <div class="dist-grid">
-        <div class="dist-info">
-          <div class="dist-block">
-            <div class="dist-label">¿Qué modela?</div>
-            <p>El número de intentos necesarios para obtener un número fijo de éxitos.</p>
+    <!-- ═══════ 5. POISSON ═══════ -->
+    <section class="section sim-section" id="sim-poisson">
+      <div class="dist-header">
+        <div class="dist-num">05</div>
+        <div>
+          <h2 class="dist-title">Distribución <span>Poisson</span></h2>
+          <p class="dist-subtitle">Función de probabilidad de Poisson</p>
+        </div>
+      </div>
+      <div class="dist-body">
+        <div class="dist-theory">
+          <div class="formula-block">
+            <div class="fb-label">Función de probabilidad</div>
+            <div class="fb-eq">P(X=k) = e⁻λ · λᵏ / k!</div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Propiedades</div>
-            <ul class="prop-list">
-              <li>Ensayos independientes</li>
-              <li>Probabilidad constante <span class="formula">p</span></li>
-              <li>Se busca alcanzar <span class="formula">r</span> éxitos</li>
-            </ul>
+          <div class="params-def">
+            <div class="param-row"><span class="param-sym">λ</span><span class="param-desc">= promedio de eventos en el intervalo</span></div>
+            <div class="param-row"><span class="param-sym">k</span><span class="param-desc">= número de eventos</span></div>
           </div>
-          <div class="dist-block">
-            <div class="dist-label">Variable aleatoria</div>
-            <p><span class="formula">X</span> = número de intentos hasta lograr <span class="formula">r</span> éxitos</p>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Función de probabilidad</div>
-            <div class="math-block">P(X = k) = C(k−1, r−1) · p^r · (1−p)^(k−r)</div>
-          </div>
-          <div class="dist-block">
-            <div class="dist-label">Ejemplo simple</div>
-            <p>Lanzar una moneda hasta obtener 3 caras. <span class="formula">r = 3, p = 0.5</span></p>
+          <div class="example-box">
+            <div class="ex-label">Ejemplo</div>
+            <p>Si en promedio llegan <strong>3 llamadas por minuto</strong>, probabilidad de que lleguen exactamente 5:</p>
+            <div class="ex-formula">P(X=5) = e⁻³ · 3⁵ / 5!</div>
           </div>
         </div>
-
-        <div class="dist-chart-col">
-          <div class="dist-block">
-            <div class="dist-label">Tabla de valores (r=3, p=0.5)</div>
-            <table>
-              <thead><tr><th>k (lanzamientos)</th><th>Probabilidad</th></tr></thead>
-              <tbody>
-                <tr><td>3</td><td>0.1250</td></tr>
-                <tr><td>4</td><td>0.1875</td></tr>
-                <tr><td>5</td><td>0.1875</td></tr>
-                <tr><td>6</td><td>0.1563</td></tr>
-              </tbody>
-            </table>
+        <div class="sim-panel">
+          <div class="sim-title">🎛 Simulador</div>
+          <div class="controls">
+            <div class="ctrl-group">
+              <label>λ (tasa promedio) = <span id="pois-l-val">3.0</span></label>
+              <input type="range" id="pois-l" min="0.1" max="20" value="3" step="0.1">
+            </div>
           </div>
-          <div class="chart-container" style="margin-top:12px">
-            <div class="chart-title">Distribución Binomial Negativa (r=3, p=0.5)</div>
-            <canvas id="chartBinomNeg" height="200"></canvas>
+          <div class="stat-pills" id="pois-stats"></div>
+        </div>
+      </div>
+      <div class="full-chart-wrap">
+        <canvas id="chartPoisson"></canvas>
+      </div>
+    </section>
+
+    <!-- ═══════ 6. EXPONENCIAL ═══════ -->
+    <section class="section sim-section" id="sim-exponencial">
+      <div class="dist-header">
+        <div class="dist-num">06</div>
+        <div>
+          <h2 class="dist-title">Distribución <span>Exponencial</span></h2>
+          <p class="dist-subtitle">Función de densidad exponencial</p>
+        </div>
+      </div>
+      <div class="dist-body">
+        <div class="dist-theory">
+          <div class="formula-block">
+            <div class="fb-label">Función de densidad</div>
+            <div class="fb-eq">f(x) = λ · e⁻λˣ</div>
+          </div>
+          <div class="params-def">
+            <div class="param-row"><span class="param-sym">λ</span><span class="param-desc">= tasa de eventos (llamadas, fallas, etc.)</span></div>
+          </div>
+          <div class="example-box">
+            <div class="ex-label">Ejemplo</div>
+            <p>Si llegan <strong>2 llamadas por minuto (λ = 2)</strong>, la función describe el tiempo entre llamadas.</p>
           </div>
         </div>
+        <div class="sim-panel">
+          <div class="sim-title">🎛 Simulador</div>
+          <div class="controls">
+            <div class="ctrl-group">
+              <label>λ (tasa) = <span id="exp-l-val">1.0</span></label>
+              <input type="range" id="exp-l" min="0.1" max="5" value="1" step="0.1">
+            </div>
+          </div>
+          <div class="stat-pills" id="exp-stats"></div>
+        </div>
+      </div>
+      <div class="full-chart-wrap">
+        <canvas id="chartExponencial"></canvas>
       </div>
     </section>
 

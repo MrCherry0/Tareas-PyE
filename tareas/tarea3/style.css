@@ -1,69 +1,192 @@
-/* Tarea 3 — Specific Styles */
+/* Tarea 3 — Distribuciones con Simuladores */
 :root { --accent: #e85d8a; }
 
-.page-badge { background: rgba(232,93,138,0.1); border-color: rgba(232,93,138,0.25); color: #e85d8a; }
+.page-badge  { background: rgba(232,93,138,0.1); border-color: rgba(232,93,138,0.25); color: #e85d8a; }
 .page-title span { color: #e85d8a; }
 .section-title span { color: #e85d8a; }
-.math-block { color: #e85d8a; background: rgba(232,93,138,0.06); }
-.result-box { background: linear-gradient(135deg, rgba(232,93,138,0.08), transparent); border-color: rgba(232,93,138,0.3); }
-.result-box .result-value { color: #e85d8a; }
-.step-num { background: rgba(232,93,138,0.1); border-color: rgba(232,93,138,0.3); color: #e85d8a; }
-.formula { color: #e85d8a; background: rgba(232,93,138,0.08); }
+.math-block  { color: #e85d8a; background: rgba(232,93,138,0.06); }
 .nav-back:hover { color: #e85d8a; border-color: rgba(232,93,138,0.4); }
+.formula-cell { font-family: var(--font-mono); font-size: 0.78rem; color: #e85d8a; }
 
-/* Distribution layout */
-.dist-grid {
+/* ── Sección de distribución ── */
+.sim-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.dist-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dist-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem; font-weight: 500;
+  color: #e85d8a;
+  background: rgba(232,93,138,0.1);
+  border: 1px solid rgba(232,93,138,0.25);
+  padding: 4px 10px; border-radius: 6px;
+  white-space: nowrap; margin-top: 4px;
+}
+
+.dist-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700;
+  line-height: 1.1; margin-bottom: 4px;
+}
+.dist-title span { color: #e85d8a; }
+.dist-subtitle { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ── Layout teoría + simulador ── */
+.dist-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.4fr;
   gap: 24px;
   align-items: start;
 }
-
-@media (max-width: 680px) {
-  .dist-grid { grid-template-columns: 1fr; }
+@media (max-width: 720px) {
+  .dist-body { grid-template-columns: 1fr; }
 }
 
-.dist-block {
-  margin-bottom: 20px;
+/* ── Teoría ── */
+.dist-theory { display: flex; flex-direction: column; gap: 16px; }
+
+.formula-block {
+  background: rgba(232,93,138,0.05);
+  border: 1px solid rgba(232,93,138,0.2);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+.fb-label {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: rgba(232,93,138,0.6); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 6px;
+}
+.fb-eq {
+  font-family: var(--font-mono); font-size: 0.95rem;
+  color: #e85d8a; line-height: 1.5;
 }
 
-.dist-block:last-child { margin-bottom: 0; }
+.params-def { display: flex; flex-direction: column; gap: 6px; }
+.param-row { display: flex; align-items: baseline; gap: 10px; font-size: 0.86rem; }
+.param-sym {
+  font-family: var(--font-mono); font-weight: 600;
+  color: #e85d8a; width: 18px; text-align: center; flex-shrink: 0;
+}
+.param-desc { color: var(--text-muted); }
 
-.dist-label {
+.example-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+.ex-label {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: var(--text-dim); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 8px;
+}
+.example-box p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; }
+.ex-formula {
+  font-family: var(--font-mono); font-size: 0.82rem;
+  color: #e85d8a; margin-top: 8px;
+  background: rgba(232,93,138,0.06);
+  padding: 6px 10px; border-radius: 6px;
+}
+
+/* ── Panel simulador ── */
+.sim-panel {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+
+.sim-title {
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: var(--text-dim); text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Controles (sliders) ── */
+.controls { display: flex; flex-direction: column; gap: 14px; }
+
+.ctrl-group { display: flex; flex-direction: column; gap: 6px; }
+
+.ctrl-group label {
+  font-size: 0.82rem; color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 8px;
+}
+
+.ctrl-group input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%; height: 4px;
+  background: var(--surface3);
+  border-radius: 4px; outline: none; cursor: pointer;
+}
+.ctrl-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #e85d8a;
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 6px rgba(232,93,138,0.5);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.ctrl-group input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.ctrl-group input[type="range"]::-moz-range-thumb {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #e85d8a;
+  border: 2px solid var(--surface);
+  cursor: pointer;
+}
+
+/* ── Stat pills ── */
+.stat-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  min-height: 28px;
+}
+.stat-pill {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  padding: 3px 10px; border-radius: 100px;
+  background: rgba(232,93,138,0.1);
+  border: 1px solid rgba(232,93,138,0.25);
   color: #e85d8a;
 }
 
-.dist-section {
-  border-left: 2px solid rgba(232,93,138,0.2);
-  padding-left: 20px;
+/* ── Gráfica ── */
+.sim-chart {
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.sim-chart canvas { max-height: 200px; }
+
+/* ── Gráfica de ancho completo ── */
+.full-chart-wrap {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;         /* altura fija y generosa */
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 8px 8px;
+  box-sizing: border-box;
 }
 
-.prop-list {
-  list-style: none;
-  padding: 0;
+.full-chart-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
-.prop-list li {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  padding: 4px 0 4px 14px;
-  position: relative;
-  line-height: 1.5;
-}
-
-.prop-list li::before {
-  content: '›';
-  position: absolute;
-  left: 0;
-  color: #e85d8a;
-}
-
-.dist-chart-col .chart-container {
-  margin-bottom: 0;
-}
+/* quitar el chart dentro del sim-panel si quedara alguno */
+.sim-chart { display: none !important; }
